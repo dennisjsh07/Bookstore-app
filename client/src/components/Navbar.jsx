@@ -22,7 +22,7 @@ const Navbar = () => {
   //   console.log(isDropdownOpen);
 
   return (
-    <div className="flex justify-between items-center border-2 border-solid border-black px-4 py-6">
+    <div className="flex justify-between items-center border-b-2 border-solid border-gray-300 px-4 py-6">
       {/*left side */}
       <div className="flex justify-between items-center gap-10">
         <Link to="/">
@@ -65,7 +65,7 @@ const Navbar = () => {
                         <Link
                           to={i.href}
                           className="block px-4 py-1 text-sm hover:bg-gray-300"
-                          onClick={()=>setisDropdownOpen(false)}
+                          onClick={() => setisDropdownOpen(false)}
                         >
                           {i.name}
                         </Link>
