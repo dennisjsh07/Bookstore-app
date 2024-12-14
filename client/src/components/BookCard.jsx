@@ -21,9 +21,9 @@ const BookCard = ({ books }) => {
           <Link to={`/books/${books._id}`}>{books.title}</Link>
         </div>
         <div>{books.description}</div>
-        <div>
+        <div className="flex gap-3">
           <div>{books.newPrice}</div>
-          <div>{books.oldPrice}</div>
+          <div className="line-through">{books.oldPrice}</div>
         </div>
         <div>
           <button className="flex bg-[#FFCE1A] rounded-md px-4 py-2 items-center gap-2">
