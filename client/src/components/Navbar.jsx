@@ -34,7 +34,7 @@ const Navbar = () => {
           <CiSearch className="absolute inset-2 start-1 size-4" />
           <input
             type="text"
-            className="rounded-md px-7 py-1 bg-[#EAEAEA]"
+            className="rounded-md px-7 py-1 bg-[#EAEAEA] focus:outline-none focus:border"
             placeholder="search"
           />
         </div>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 />
               </button>
             ) : (
-              <Link to="/user">
+              <Link to="/login">
                 <HiOutlineUser className="size-6" />
               </Link>
             )}
@@ -82,9 +82,9 @@ const Navbar = () => {
           <li>
             <Link
               to="/cart"
-              className="flex items-center gap-1 bg-yellow-300 px-4 py-2"
+              className="flex items-center gap-1 bg-yellow-300 px-5 py-1 rounded"
             >
-              <AiOutlineShoppingCart className="size-5" />
+              <AiOutlineShoppingCart className="size-4" />
               <span>0</span>
             </Link>
           </li>
