@@ -27,3 +27,9 @@ News section
 
 Footer section
 1) build footer again from scratch.
+
+CartPage
+1) debug the cart page.
+
+checkout page
+1) form onSubmit not working.

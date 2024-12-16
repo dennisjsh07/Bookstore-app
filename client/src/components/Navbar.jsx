@@ -5,8 +5,10 @@ import { FaRegHeart } from "react-icons/fa6";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
+
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 const navigate = [
   { name: "dashboard", href: "/dashboard" },
@@ -20,6 +22,10 @@ const Navbar = () => {
 
   const [isDropdownOpen, setisDropdownOpen] = useState(false);
   //   console.log(isDropdownOpen);
+
+  //  subscribe to the cart using selector...
+  const cartItems = useSelector((store)=>store.cart.cartItems);
+  // console.log("cartItems-->s", cartItems)
 
   return (
     <div className="flex justify-between items-center border-b-2 border-solid border-gray-300 px-4 py-6">
@@ -82,10 +88,10 @@ const Navbar = () => {
           <li>
             <Link
               to="/cart"
-              className="flex items-center gap-1 bg-yellow-300 px-5 py-1 rounded"
+              className="flex items-center gap-2 bg-yellow-300 px-5 py-1 rounded"
             >
-              <AiOutlineShoppingCart className="size-4" />
-              <span>0</span>
+              <AiOutlineShoppingCart className="size-5" />
+              <span className="font-semibold">{cartItems.length}</span>
             </Link>
           </li>
         </ul>
