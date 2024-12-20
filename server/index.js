@@ -1,11 +1,15 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 5000;
+require("dotenv").config();
+
+const bookRouter = require("./routes/book");
+
 const app = express();
-const port = process.env.PORT || 5000
 
-app.get("/", (req, res)=>{
-    res.send("Hello world");
+app.use(bodyParser.json());
+app.use("/book", bookRouter);
+
+app.listen(PORT, () => {
+  console.log("app running on port 5000");
 });
-
-app.listen(port, ()=>{
-    console.log("app running on port 5000")
-})
