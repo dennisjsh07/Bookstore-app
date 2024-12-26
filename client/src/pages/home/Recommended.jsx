@@ -11,20 +11,10 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 import BookCard from "../../components/BookCard";
+import { useFetchAllBooksQuery } from "../../utils/bookApi";
 
 const Recommended = () => {
-  const [books, setBooks] = useState([]);
-
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
-  const fetchBooks = async () => {
-    const data = await fetch("books.json");
-    const json = await data.json();
-    // console.log(json);
-    setBooks(json);
-  };
+  const { data : books = [] } = useFetchAllBooksQuery();
 
   return (
     <div className="m-20">

@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import { useFetchAllBooksQuery } from "../../utils/bookApi";
 
 const categories = [
   "Choose a genre",
@@ -22,7 +23,8 @@ const categories = [
 
 const TopSellers = () => {
   const [selectedCategory, setselectedCategory] = useState("Choose a genre");
-  const [books, setBooks] = useState([]);
+  const { data: books = [] } = useFetchAllBooksQuery();
+  // console.log(booksData);
 
   const filteredBooks =
     selectedCategory === "Choose a genre"
@@ -32,16 +34,6 @@ const TopSellers = () => {
         });
   //   console.log(filteredBooks);
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
-  const fetchBooks = async () => {
-    const data = await fetch("books.json");
-    const json = await data.json();
-    // console.log(json);
-    setBooks(json);
-  };
   return (
     <div className="m-20">
       <div>

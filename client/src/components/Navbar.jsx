@@ -88,7 +88,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/cart"
-              className="flex items-center gap-2 bg-yellow-300 px-5 py-1 rounded"
+              className="flex items-center gap-2 bg-[#FFCE1A] px-5 py-1 rounded"
             >
               <AiOutlineShoppingCart className="size-5" />
               <span className="font-semibold">{cartItems.length}</span>

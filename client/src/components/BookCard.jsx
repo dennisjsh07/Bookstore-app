@@ -16,7 +16,7 @@ const BookCard = ({ books }) => {
   return (
     <div className="flex justify-center gap-4 items-center">
       <div className="">
-        <Link to={`/books/`}>
+        <Link to={`/books/${books._id}`}>
           <img
             src={`${getImgUrl(books.coverImage)}`}
             alt=""
