@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const CheckOutPage = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -23,7 +24,7 @@ const CheckOutPage = () => {
   // calculate the total price of all items in the cart...
   const totalPrice = cartItems.reduce((acc, curr) => acc + curr.newPrice, 0);
 
-  const currentUser = true;
+  const { currentUser } = useAuth();
   return (
     <section>
       <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
