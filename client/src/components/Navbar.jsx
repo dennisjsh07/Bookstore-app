@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useAuth } from "../context/AuthContext";
 
 const navigate = [
   { name: "dashboard", href: "/dashboard" },
@@ -18,14 +19,18 @@ const navigate = [
 ];
 
 const Navbar = () => {
-  const currentUser = false;
+  const {currentUser, logout} = useAuth();
 
   const [isDropdownOpen, setisDropdownOpen] = useState(false);
   //   console.log(isDropdownOpen);
 
   //  subscribe to the cart using selector...
   const cartItems = useSelector((store)=>store.cart.cartItems);
-  // console.log("cartItems-->s", cartItems)
+  // console.log("cartItems-->s", cartItems);
+
+  const handleLogout = ()=>{
+    logout();
+  }
 
   return (
     <div className="flex justify-between items-center border-b-2 border-solid border-gray-300 px-4 py-6">
@@ -78,6 +83,11 @@ const Navbar = () => {
                       </li>
                     );
                   })}
+                  <li>
+                    <button onClick={handleLogout} className="block w-full text-left px-4 py-1 text-sm hover:bg-gray-300">
+                      Logout
+                    </button>
+                  </li>
                 </ul>
               </div>
             )}

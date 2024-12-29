@@ -2,9 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
+import { useAuth } from "../context/AuthContext";
 
 const Register = () => {
   const [message, setMessage] = useState("");
+  const {registerUser} = useAuth();
 
   const {
     register,
@@ -15,7 +17,18 @@ const Register = () => {
 
   const googleSignInHandler = () => {};
 
-  const onSubmit = (data) => console.log(data);
+  // register user...
+  const onSubmit = async (data) =>{
+    console.log(data);
+    try {
+      await registerUser(data.email, data.password);
+      alert("user registration successful");
+    } catch (error) {
+      setMessage("please provide a valid email and password");
+      console.log(error.message);
+    }
+  } 
+
   return (
     <div className="h-[calc(100vh-120px)] flex justify-center items-center">
       <div className="w-full max-w-sm bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 mx-auto border">

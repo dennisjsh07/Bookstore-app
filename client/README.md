@@ -33,3 +33,7 @@ CartPage
 
 checkout page
 1) form onSubmit not working.
+
+google sign in
+1) fix google sign in login and register page.
+
