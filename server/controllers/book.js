@@ -1,4 +1,4 @@
-const { Book } = require("../db/index");
+const { Book } = require("../models/books");
 const { createBook } = require("../types");
 
 const PostBook = async (req, res) => {
