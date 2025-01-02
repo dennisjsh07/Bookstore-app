@@ -41,3 +41,5 @@ export const {
   useUpdateBookMutation,
   useDeleteSingleBookMutation,
 } = booksApi;
+
+export default booksApi;

@@ -37,3 +37,6 @@ checkout page
 google sign in
 1) fix google sign in login and register page.
 
+creating order in server...
+1) add zod validation for creating order...
+
