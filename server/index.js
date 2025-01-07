@@ -7,6 +7,7 @@ require("dotenv").config();
 
 const bookRouter = require("./routes/book");
 const orderRouter = require("./routes/order");
+const userRouter = require("./routes/user");
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use(cors());
 
 app.use("/book", bookRouter);
 app.use("/order", orderRouter);
+app.use("/admin", userRouter);
+
 
 app.listen(PORT, () => {
   console.log("app running on port 5000");
