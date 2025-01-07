@@ -9,6 +9,7 @@ import SingleBook from "../components/SingleBook";
 import PrivateRoute from "./PrivateRoute";
 import Orders from "../components/Orders";
 import AdminRoute from "./AdminRoute";
+import AdminLogin from "../components/AdminLogin";
 
 const router = createBrowserRouter([
   {
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <div>Admin Login</div>,
+    element: <AdminLogin />,
   },
   {
     path: "/dashboard",
